@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS POST</title>
+  </head>
+  <body>
+    <p>
+      Body
+    </p>
+    <script type="text/javascript" charset="utf-8">
+      fetch('/', {
+        method: 'POST',
+        body: new URLSearchParams({
+          'userName': 'test@gmail.com',
+          'password': 'Password',
+          'grant_type': 'password'
+        })
+      }).then(resp => {
+        resp.text().then(textBody => {
+          console.log(textBody);
+        });
+      });
+    </script>
+  </body>
+</html>
